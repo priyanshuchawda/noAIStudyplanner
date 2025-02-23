@@ -14,6 +14,11 @@ import {
   FiSettings,
   FiMessageCircle,
   FiCalendar,
+  FiClock,
+  FiBook,
+  FiUser,
+  FiTrendingUp,
+  FiPieChart,
 } from 'react-icons/fi';
 
 interface NavItem {
@@ -24,9 +29,13 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: 'Dashboard', icon: FiHome, to: '/' },
-  { label: 'Goals', icon: FiTarget, to: '/goals' },
+  { label: 'Study Timer', icon: FiClock, to: '/timer' },
+  { label: 'Study Notes', icon: FiBook, to: '/notes' },
+  { label: 'Study Stats', icon: FiPieChart, to: '/stats' },
+  { label: 'Progress', icon: FiTrendingUp, to: '/progress' },
   { label: 'Calendar', icon: FiCalendar, to: '/calendar' },
-  { label: 'Analytics', icon: FiBarChart2, to: '/analytics' },
+  { label: 'Goals', icon: FiTarget, to: '/goals' },
+  { label: 'Profile', icon: FiUser, to: '/profile' },
   { label: 'Chat', icon: FiMessageCircle, to: '/chat' },
   { label: 'Settings', icon: FiSettings, to: '/settings' },
 ];
@@ -48,6 +57,7 @@ export default function Sidebar() {
       borderRight="1px solid"
       borderColor={borderColor}
       py={6}
+      overflowY="auto"
     >
       <VStack spacing={2} align="stretch" px={4}>
         {navItems.map((item) => (

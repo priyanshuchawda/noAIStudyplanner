@@ -23,3 +23,20 @@ export interface User {
     dashboardLayout: string[];
   };
 }
+
+export interface Reward {
+  id: string;
+  title: string;
+  description: string;
+  points: number;
+  type: 'streak' | 'achievement' | 'milestone';
+  icon: string;
+  unlockedAt?: string;
+}
+
+export interface UserRewards {
+  totalPoints: number;
+  currentStreak: number;
+  longestStreak: number;
+  rewardsEarned: Reward[];
+}

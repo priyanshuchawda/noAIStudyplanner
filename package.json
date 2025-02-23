@@ -3,14 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://priyanshuchawda.github.io/noAIStudyplanner/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^2.8.2",
     "@chakra-ui/system": "^2.6.2",
     "@emotion/react": "^11.11.3",
@@ -19,6 +22,7 @@
     "@types/react-beautiful-dnd": "^13.1.8",
     "@types/recharts": "^1.8.29",
     "date-fns": "^4.1.0",
+    "firebase": "^11.3.1",
     "framer-motion": "^10.18.0",
     "marked": "^15.0.7",
     "react": "^18.2.0",
@@ -42,6 +46,7 @@
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
+    "gh-pages": "^6.3.0",
     "globals": "^15.14.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",

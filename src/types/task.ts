@@ -19,3 +19,10 @@ export interface TaskProgress {
   completed: boolean;
   notes?: string;
 }
+
+export interface Challenge {
+  id: number;
+  title: string;
+  reward: number;
+  completed: boolean;
+}

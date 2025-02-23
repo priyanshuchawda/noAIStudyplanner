@@ -4,11 +4,13 @@ import {
   Progress,
   VStack,
   HStack,
+  Icon,
   useColorModeValue,
   Tooltip,
   Badge,
 } from '@chakra-ui/react';
 import { InfoIcon } from '@chakra-ui/icons';
+import { FiTarget, FiTrendingUp, FiCalendar } from 'react-icons/fi';
 
 interface GoalPrediction {
   id: string;
@@ -58,9 +60,12 @@ export default function GoalPredictions({ predictions }: GoalPredictionsProps) {
     >
       <VStack spacing={4} align="stretch">
         <HStack justify="space-between">
-          <Text fontSize="lg" fontWeight="medium">
-            Goal Predictions
-          </Text>
+          <HStack>
+            <Icon as={FiTarget} color="purple.500" />
+            <Text fontSize="lg" fontWeight="medium">
+              Goal Predictions
+            </Text>
+          </HStack>
           <Tooltip label="Predictions are based on your historical progress and current study patterns">
             <InfoIcon color="gray.500" />
           </Tooltip>
@@ -73,6 +78,7 @@ export default function GoalPredictions({ predictions }: GoalPredictionsProps) {
                 <Text fontWeight="medium">{prediction.title}</Text>
                 <HStack spacing={2}>
                   <Badge colorScheme={getTrendColor(prediction.trend)}>
+                    <Icon as={FiTrendingUp} mr={1} />
                     {prediction.trend}
                   </Badge>
                   <Badge
@@ -102,9 +108,12 @@ export default function GoalPredictions({ predictions }: GoalPredictionsProps) {
 
               <VStack spacing={1} align="stretch">
                 <HStack justify="space-between">
-                  <Text fontSize="sm" color="gray.500">
-                    Predicted Completion
-                  </Text>
+                  <HStack>
+                    <Icon as={FiCalendar} color="gray.500" />
+                    <Text fontSize="sm" color="gray.500">
+                      Predicted Completion
+                    </Text>
+                  </HStack>
                   <Text fontSize="sm">
                     {prediction.predictedCompletion.toLocaleDateString()}
                   </Text>

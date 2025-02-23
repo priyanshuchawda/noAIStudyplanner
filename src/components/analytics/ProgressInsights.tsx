@@ -50,15 +50,15 @@ export default function ProgressInsights({ metrics }: ProgressInsightsProps) {
 
   const studyMetrics: StudyMetric[] = [
     {
-      label: 'Weekly Study Hours',
+      label: 'Weekly ㅤ Study ㅤ Hours',
       value: metrics.weeklyStudyHours,
       change: metrics.weeklyStudyHours - metrics.previousWeekStudyHours,
-      unit: 'hours',
+      unit: 'hr',
       icon: FiClock,
       description: 'Total time spent studying this week',
     },
     {
-      label: 'Task Completion',
+      label: 'Task Completed',
       value: metrics.taskCompletionRate,
       change: metrics.taskCompletionRate - metrics.previousTaskCompletionRate,
       unit: '%',
